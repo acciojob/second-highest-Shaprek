@@ -10,9 +10,15 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			arr=arr.map(Number);
-			arr.sort((a,b)=> {return b-a;});
-			return arr[1];
+			let ans=arr[0], first=arr[0], second="";
+			for(const a of arr){
+				if(a>first){
+					second=first;
+					first=a;
+				}
+				else if(a>second)second=a;
+			}
+			return second;
 			
 		}
 
